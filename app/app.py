@@ -1,5 +1,7 @@
 import requests
 from flask import Flask, render_template, request, session
+#from flask_restful import Resource, Api
+#from flask_cors import CORS
 import json
 app=Flask(__name__)
 
@@ -15,11 +17,11 @@ def index():
 		'total_products': len(products)
 	}
 
-	url = "http://ae"
+	url = "http://"
 	headers = {'Authorization': ''}
-	response = requests.request('POST', url, header=headers)
-	data = json.loads(response.read())
-	print(data)
+	response = requests.request('POST', url, headers=headers)
+	
+	print(response.json)
 	
 	return render_template('index.html', data=data)
 @app.route('/getData')
