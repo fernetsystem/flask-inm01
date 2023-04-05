@@ -1,4 +1,5 @@
-from flask import Flask, render_template, request, redirect, url_foor, flash, session
+import requests
+from flask import Flask, render_template, request, session
 import json
 app=Flask(__name__)
 
@@ -14,9 +15,9 @@ def index():
 		'total_products': len(products)
 	}
 
-	url = "was"
+	url = "http://ae"
 	headers = {'Authorization': ''}
-	response = request.request('POST', url, header=headers)
+	response = requests.request('POST', url, header=headers)
 	data = json.loads(response.read())
 	print(data)
 	
