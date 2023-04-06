@@ -11,7 +11,7 @@ def index():
 
 	url = "http://"
 	headers = {'Authorization': ''}
-	response = requests.request('POST', url, headers=headers)
+	response = requests.post(url, headers=headers)
 	
 	print(response.json())
 
